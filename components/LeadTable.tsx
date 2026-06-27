@@ -1,1 +1,2 @@
-export default function LeadTable(){return <div />}
+import LeadBadge from './LeadBadge'
+export default function LeadTable({leads}:{leads:any[]}){return <div className="table-wrap"><table><thead><tr><th>Name</th><th>Type</th><th>City</th><th>Score</th><th>Priority</th><th>Status</th><th>Issues</th></tr></thead><tbody>{leads.map(l=><tr key={l.id}><td><b>{l.name}</b><div className="muted small">{l.phone}</div></td><td>{l.type==='church'?'Church':'Small Business'}</td><td>{l.city}, {l.state}</td><td>{l.score}</td><td><LeadBadge value={l.priority}/></td><td><span className="badge status">{l.status}</span></td><td>{(l.websiteIssues||[]).join(', ')}</td></tr>)}</tbody></table></div>}
