@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/leads/page": "app/leads/page.js",
+  "/config/page": "app/config/page.js",
+  "/outreach/page": "app/outreach/page.js",
+  "/search/page": "app/search/page.js"
+}
