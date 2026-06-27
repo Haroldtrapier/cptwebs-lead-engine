@@ -1,1 +1,2 @@
-export default function OutreachGenerator(){return <div className="card">Outreach generator placeholder</div>}
+import {buildOutreach} from '../lib/outreach'
+export default function OutreachGenerator({lead}:{lead:any}){const o=buildOutreach(lead);return <div className="two"><div className="card"><h2 className="panel-title">Cold email</h2><div className="copybox">{o.email}</div></div><div className="card"><h2 className="panel-title">SMS</h2><div className="copybox">{o.sms}</div></div><div className="card"><h2 className="panel-title">Phone script</h2><div className="copybox">{o.phone}</div></div><div className="card"><h2 className="panel-title">Follow-up</h2><div className="copybox">{o.followup}</div></div></div>}
