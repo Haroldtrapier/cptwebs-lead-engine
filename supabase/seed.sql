@@ -1,0 +1,4 @@
+insert into public.leads (name,lead_type,category,city,state,phone,website,website_issues,score,priority,recommended_offer,outreach_angle,status,source)
+values
+('Grace Community Church Sample','church','Church','Charlotte','NC','704-555-0100','https://example.com',array['outdated design','missing online giving','missing sermon page'],94,'Hot','Church website: $99 setup + $99/month with giving, sermons, events, ministries, and 5-7 day launch.','Improve visitor trust, giving, sermons, and events.','New','seed'),
+('Queen City Service Co Sample','small_business','Local Service Business','Huntersville','NC','704-555-0101','https://example.com',array['not mobile friendly','missing booking CTA','missing reviews section'],83,'Strong','Business website: $150 setup + $99/month with service pages, booking or quote CTA, maps, reviews, and 5-7 day launch.','Turn more local traffic into calls, quotes, and bookings.','New','seed');
