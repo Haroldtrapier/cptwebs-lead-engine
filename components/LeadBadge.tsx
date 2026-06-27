@@ -1,0 +1,1 @@
+export default function LeadBadge({value}:{value:string}){const c=value==='Hot'?'hot':value==='Strong'?'strong':value==='Possible'?'possible':'low';return <span className={`badge ${c}`}>{value}</span>}
