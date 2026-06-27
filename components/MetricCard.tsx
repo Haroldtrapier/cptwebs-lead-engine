@@ -1,1 +1,1 @@
-export default function MetricCard(){return <div />}
+export default function MetricCard(props:{label:string;value:string|number;note?:string}){return <div className="card"><div className="metric-label">{props.label}</div><div className="metric-value">{props.value}</div>{props.note?<div className="muted small">{props.note}</div>:null}</div>}
