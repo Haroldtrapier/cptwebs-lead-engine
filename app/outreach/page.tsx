@@ -1,5 +1,4 @@
-'use client'
-import {useMemo,useState} from 'react'
-import {mockLeads} from '../../lib/mockLeads'
-import {buildOutreach} from '../../lib/outreach'
-export default function OutreachPage(){const [id,setId]=useState('1');const lead=mockLeads.find(l=>l.id===id)||mockLeads[0];const o=useMemo(()=>buildOutreach(lead),[lead]);return <div className="stack"><div><h1 className="title">Outreach Generator</h1><p className="subtitle">Generate CPTWEBS sales copy based on the lead score, website issues, offer, and free mockup pitch.</p></div><div className="card"><label className="label">Select lead<select className="input" value={id} onChange={e=>setId(e.target.value)}>{mockLeads.map(l=><option key={l.id} value={l.id}>{l.name}</option>)}</select></label><p className="muted">Score {lead.score}/100 • {lead.priority} • {lead.websiteIssues.join(', ')}</p></div><div className="two"><div className="card"><h2 className="panel-title">Cold email</h2><div className="copybox">{o.email}</div></div><div className="card"><h2 className="panel-title">SMS</h2><div className="copybox">{o.sms}</div></div><div className="card"><h2 className="panel-title">Phone script</h2><div className="copybox">{o.phone}</div></div><div className="card"><h2 className="panel-title">Follow-up</h2><div className="copybox">{o.followup}</div></div></div><div className="card"><h2 className="panel-title">Website audit summary</h2><div className="copybox">{o.audit}</div></div></div>}
+import {getLeads} from '../../lib/leadRepository'
+import OutreachView from '../../components/OutreachView'
+export const dynamic='force-dynamic'
+export default async function OutreachPage(){const leads=await getLeads();return <OutreachView leads={leads}/>}
